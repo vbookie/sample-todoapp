@@ -1,0 +1,17 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "include": true,
+        "bin": true,
+        "lib": true,
+        "pip-selfcheck.json": true,
+        ".Python": true,
+        "**/__pycache__": true
+    },
+    "python.pythonPath": "/usr/local/bin/python3.6"
+}
