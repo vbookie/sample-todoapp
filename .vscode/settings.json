@@ -12,7 +12,9 @@
         "pip-selfcheck.json": true,
         ".Python": true,
         "**/__pycache__": true,
-        "webapp/node_modules": true
+        "webapp/node_modules": true,
+        "webapp/dist": true,
+        "webapp/dll": true
     },
     "python.pythonPath": "/usr/local/bin/python3.6",
     "typescript.tsdk": "webapp/node_modules/typescript/lib/"
