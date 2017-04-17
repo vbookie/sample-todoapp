@@ -2,7 +2,7 @@ import ptvsd
 import falcon
 import tasks
 
-# ptvsd.enable_attach("my_secret", address=('localhost', 3000))
+# ptvsd.enable_attach("my_secret", address=('localhost', 4000))
 
 APP = application = falcon.API()
 
