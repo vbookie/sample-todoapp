@@ -86,7 +86,7 @@
               "--remote-debugging-port=9222"
             ],
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}/webapp/"
         },
         {
             "name": "Attach to Chrome, with sourcemaps",

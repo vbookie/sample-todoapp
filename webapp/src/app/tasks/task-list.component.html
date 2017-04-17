@@ -1,24 +1,13 @@
 <div>
-    <div>
-        <button>
-            Create
-        </button>
-    </div>
-    <div *ngIf="!tasks">
+    <create-task (created)="onCreated($event)">
+
+    </create-task>
+    <div *ngIf="!tasks || tasks.length == 0">
         No todos
     </div>
-    <ul>
+    <ul *ngIf="tasks">
         <li *ngFor="let task of tasks">
-            <input type="checkbox" (ngModelChange)="onComplete($event)" [ngModel]="task.completed" />
-            <span>
-                {{task.Content}}
-            </span>
-            <button (click)="onEdit(task)">
-                Edit
-            </button>
-            <button (click)="onDelete(task.id)">
-                Delete
-            </button>
+            <task-item [task]="task" (deleted)="onDeleted($event)"></task-item>
         </li>
     </ul>
 </div>

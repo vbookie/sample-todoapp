@@ -25,7 +25,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { NoContentComponent } from './no-content';
-import { TaskListComponent, TaskService } from './tasks';
+import { TaskListComponent, CreateTaskComponent, TaskItemComponent, TaskService } from './tasks';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -50,6 +50,8 @@ type StoreType = {
   declarations: [
     AppComponent,
     TaskListComponent,
+    TaskItemComponent,
+    CreateTaskComponent,
     NoContentComponent
   ],
   imports: [ // import Angular's modules

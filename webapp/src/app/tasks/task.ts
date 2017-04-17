@@ -1,7 +1,7 @@
 import { Input } from "@angular/core";
 
 export class Task {   
-    id: string;
+    _id: string;
 
     @Input()
     content: string;

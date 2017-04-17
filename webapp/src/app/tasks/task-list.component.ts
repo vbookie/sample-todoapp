@@ -1,6 +1,7 @@
+import { TaskItemComponent } from './task-item.component';
 import { Task } from "./task";
 import { TaskService } from './task.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'task-list',
@@ -16,15 +17,14 @@ export class TaskListComponent implements OnInit {
             .then(tasks => this.tasks = tasks);
     }
 
-    public onEdit(task: Task) {
-        
+    public onCreated(task: Task): void {
+        this.tasks.push(task);
     }
 
-    public onDelete(id: string) {
-        
-    }
-
-    public onComplete(event: any) {
-
+    public onDeleted(task: Task): void {
+        let index = this.tasks.indexOf(task);
+        if (index > -1) {
+            this.tasks.splice(index, 1);
+        }
     }
 }

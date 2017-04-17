@@ -1,0 +1,8 @@
+<div>
+    <button (click)="onCreate()" *ngIf="!isCreating">Create</button>
+    <div *ngIf="isCreating">
+        <input type="text" [(ngModel)]="content" required />
+        <button (click)="onSave()">Save</button>
+        <button (click)="onCancel()">Cancel</button>
+    </div>
+</div>
