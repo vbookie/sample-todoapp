@@ -1,10 +1,12 @@
 import ptvsd
 import falcon
 import tasks
+from falcon_cors import CORS
 
 # ptvsd.enable_attach("my_secret", address=('localhost', 4000))
 
-APP = application = falcon.API()
+cors = CORS(allow_origins_list=["http://localhost:3000"])
+APP = application = falcon.API(middleware=[cors.middleware])
 
 TASK_MANAGER = tasks.TaskManager()
 TASKS_HANDLER = tasks.CollectionHandler(TASK_MANAGER)
