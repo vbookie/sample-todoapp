@@ -25,7 +25,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { NoContentComponent } from './no-content';
-import { TaskListComponent } from './tasks';
+import { TaskListComponent, TaskService } from './tasks';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -60,7 +60,8 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    TaskService
   ]
 })
 export class AppModule {
