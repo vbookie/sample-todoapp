@@ -1,8 +1,10 @@
 <div>
-    <button (click)="onCreate()" *ngIf="!isCreating">Create</button>
-    <div *ngIf="isCreating">
-        <input type="text" [(ngModel)]="content" required />
-        <button (click)="onSave()">Save</button>
-        <button (click)="onCancel()">Cancel</button>
+    <button (click)="onCreate()" *ngIf="!isCreating" class="btn btn-default">Add TODO</button>
+    <div *ngIf="isCreating" class="input-group">
+        <input type="text" [(ngModel)]="content" required class="form-control" />
+        <div class="input-group-btn">
+            <button (click)="onSave()" class="btn btn-success">Add</button>
+            <button (click)="onCancel()" class="btn btn-danger">Cancel</button>
+        </div>
     </div>
 </div>

@@ -1,18 +1,25 @@
-<div *ngIf="!isEditing">
-    <input type="checkbox" (ngModelChange)="onComplete($event)" [ngModel]="task.completed" />
-    <span>
-        {{task.content}}
+<div *ngIf="!isEditing" class="input-group">
+    <span class="input-group-addon">
+        <input type="checkbox" (ngModelChange)="onComplete($event)" [ngModel]="task.completed" />
     </span>
-    <button (click)="onEdit()">
-        Edit
-    </button>
-    <button (click)="onDelete()">
-        Delete
-    </button>
+    <input type="text" [ngModel]="task.content" class="form-control" disabled />
+    <div class="input-group-btn">
+        <button (click)="onEdit()" class="btn btn-primary">
+            Edit
+        </button>
+        <button (click)="onDelete()" class="btn btn-danger">
+            Delete
+        </button>
+    </div>
 </div>
-<div *ngIf="isEditing">
-    <input type="text" [(ngModel)]="task.content" />
-    <button (click)="onSave()">
-        Save
-    </button>
+<div *ngIf="isEditing" class="input-group">
+    <input type="text" [(ngModel)]="task.content" class="form-control" />
+    <div class="input-group-btn">
+        <button (click)="onSave()" class="btn btn-success">
+            Save
+        </button>
+        <button (click)="onCancel()" class="btn btn-danger">
+            Cancel
+        </button>
+    </div>
 </div>
