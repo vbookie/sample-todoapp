@@ -31,7 +31,7 @@ class ItemHandler(object):
         else:
             resp.body = json.dumps(task, cls=SimpleEncoder)
             resp.status = falcon.HTTP_OK
-        
+
     def on_put(self, req, resp, _id):
         data = json.loads(req.stream.read())
         self._manager.edit_task(_id, data)
