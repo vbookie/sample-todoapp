@@ -1,7 +1,7 @@
 import { Task } from './task';
 
 import { Injectable } from '@angular/core';
-import { Http, Headers } from "@angular/http";
+import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -15,15 +15,15 @@ export class TaskService {
     public getTasks(): Promise<Task[]> {
         return this.http.get(this.url)
             .toPromise()
-            .then(response => response.json() as Task[])
+            .then((response) => response.json() as Task[])
             .catch(this.handleError);
     }
 
     public create(taskContent: string): Promise<Task> {
-        let data = {content: taskContent}
+        let data = {content: taskContent};
         return this.http.post(this.url, JSON.stringify(data), {headers: this.headers})
             .toPromise()
-            .then(response => response.json() as Task)
+            .then((response) => response.json() as Task)
             .catch(this.handleError);
     }
 

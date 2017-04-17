@@ -1,14 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TaskService, Task } from './';
 
 @Component({
     selector: 'create-task',
     templateUrl: 'create-task.component.html'
 })
-
-export class CreateTaskComponent implements OnInit {
+export class CreateTaskComponent {
     public isCreating = false;
-    
+
     @Input()
     public content: string;
 
@@ -17,18 +16,17 @@ export class CreateTaskComponent implements OnInit {
 
     constructor(private service: TaskService) { }
 
-    ngOnInit() { }
-
     public onCreate() {
         this.isCreating = true;
         this.content = '';
     }
 
     public onSave() {
-        this.isCreating = false;
-        
         this.service.create(this.content)
-            .then(task => this.created.emit(task));
+            .then((task) => {
+                this.created.emit(task);
+                this.isCreating = false;
+            });
     }
 
     public onCancel() {

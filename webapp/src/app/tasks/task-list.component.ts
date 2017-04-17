@@ -1,5 +1,5 @@
 import { TaskItemComponent } from './task-item.component';
-import { Task } from "./task";
+import { Task } from './task';
 import { TaskService } from './task.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,9 +12,9 @@ export class TaskListComponent implements OnInit {
 
     constructor(private service: TaskService) { }
 
-    ngOnInit() {
+    public ngOnInit() {
         this.service.getTasks()
-            .then(tasks => this.tasks = tasks);
+            .then((tasks) => this.tasks = tasks);
     }
 
     public onCreated(task: Task): void {

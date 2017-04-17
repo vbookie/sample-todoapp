@@ -1,11 +1,11 @@
-import { Input } from "@angular/core";
+import { Input } from '@angular/core';
 
-export class Task {   
-    _id: string;
-
-    @Input()
-    content: string;
+export class Task {
+    public _id: string;
 
     @Input()
-    completed: boolean;
+    public content: string;
+
+    @Input()
+    public completed: boolean;
 }
