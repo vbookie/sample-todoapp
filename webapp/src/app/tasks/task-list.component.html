@@ -1,11 +1,7 @@
 <div class="row">
     <h1>MY TODOs</h1>
 </div>
-<div class="row">
-    <div class="row">
-        <create-task (created)="onCreated($event)">
-        </create-task>
-    </div>
+<div class="row">    
     <div class="row"> 
         <div *ngIf="!tasks || tasks.length == 0">
             No todos
@@ -15,5 +11,9 @@
                 <task-item [task]="task" (deleted)="onDeleted($event)"></task-item>
             </li>
         </ul>
+    </div>
+    <div class="row">
+        <create-task (created)="onCreated($event)">
+        </create-task>
     </div>
 </div>
