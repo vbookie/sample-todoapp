@@ -27,9 +27,6 @@ import { AppState, InternalStateType } from './app.service';
 import { NoContentComponent } from './no-content';
 import { TaskListComponent, CreateTaskComponent, TaskItemComponent, TaskService } from './tasks';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
-
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
